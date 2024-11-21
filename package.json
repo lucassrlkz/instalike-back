@@ -2,7 +2,7 @@
   "name": "instalike-back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "license": "AGPL-version-3.0",
   "private": false,
@@ -24,7 +24,7 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "node server.js",
+    "dev": "node --watch server.js",
     "test": ""
   },
   "dependencies": {
