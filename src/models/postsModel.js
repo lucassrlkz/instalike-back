@@ -1,3 +1,5 @@
+import "dotenv/config";
+import { ObjectId } from "mongodb"
 import connectDatabase from "../config/dbConfig.js"
 
 const connection = await connectDatabase(process.env.MONGODB_CONNECTION)
@@ -17,4 +19,11 @@ export async function createPost(newPost){
   
   const collection = await collectionDB(connection)
   return collection.insertOne(newPost)
+}
+export async function updateNewPost(id, updatedPost){
+
+  const collection = await collectionDB(connection)
+  const objId = ObjectId.createFromHexString(id)
+
+  return collection.updateOne({_id:new ObjectId(objId)}, {$set:updatedPost})
 }

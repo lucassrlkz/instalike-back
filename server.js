@@ -48,6 +48,8 @@ app.listen(port, () => {
   console.log(`server listening on port: ${port}`);
 })
 
+app.use(express.static("uploads"))
+
 routes(app)
 
 
